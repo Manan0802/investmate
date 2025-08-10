@@ -1,0 +1,86 @@
+/* Root container */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  background: linear-gradient(145deg, #0f0f0f, #1b1b1f);
+  color: #f1f1f1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Logo styles with glow and smooth scaling */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  transition: transform 0.3s ease, filter 0.4s ease;
+  will-change: transform, filter;
+  filter: drop-shadow(0 0 1em #00f7ff88);
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #00f7ffaa);
+  transform: scale(1.08);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+/* Spinning effect (only for React) */
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* Card component with glassmorphism */
+.card {
+  padding: 2em;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+  margin: 2rem 0;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0, 255, 255, 0.1);
+}
+
+/* Subtext with gentle style */
+.read-the-docs {
+  color: #9e9e9e;
+  font-size: 0.95rem;
+  font-style: italic;
+  margin-top: 2rem;
+  transition: color 0.3s ease;
+}
+
+.read-the-docs:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Floating logo (optional aesthetic) */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
