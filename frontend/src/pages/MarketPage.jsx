@@ -1,6 +1,6 @@
 // --- Imports ---
 import React, { useEffect, useState, useMemo, useCallback } from "react";
-import userService from "../services/userService";
+import userService from "../services/UserService";
 // Recharts library for creating the trend charts
 import {
   AreaChart,
