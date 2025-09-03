@@ -6,6 +6,11 @@ import { Link, useNavigate } from 'react-router-dom';
 // useAuth: Custom hook to access the login function from our AuthContext.
 import { useAuth } from '../context/AuthContext.jsx';
 
+// --- EDIT START ---
+// Get the backend URL from the environment variables
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+// --- EDIT END ---
+
 /**
  * LoginPage Component
  * Provides a form for users to log in using their email and password,
@@ -64,8 +69,10 @@ function LoginPage() {
    * Initiates the Google OAuth login flow by redirecting the user.
    */
   const handleGoogleLogin = () => {
-    // This URL should point to your backend's Google authentication route.
-    window.open('http://localhost:5000/auth/google', '_self');
+    // --- EDIT START ---
+    // This URL now points to your backend's Google authentication route using the environment variable.
+    window.open(`${BACKEND_URL}/auth/google`, '_self');
+    // --- EDIT END ---
   };
 
   return (

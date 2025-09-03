@@ -1,11 +1,17 @@
 import axios from "axios";
 
-const USER_API_URL = "http://localhost:5000/api/users/";
-const INVESTMENT_API_URL = "http://localhost:5000/api/investments/";
-const FINANCIALS_API_URL = "http://localhost:5000/api/financials/";
-const CRYPTO_API_URL = "http://localhost:5000/api/crypto/";
-const NEWS_API_URL = "http://localhost:5000/api/news/";
-const AI_API_URL = "http://localhost:5000/api/ai/";
+// --- EDITS START HERE ---
+// 1. Get the backend URL from the environment variables
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
+// 2. Define API endpoints using the backend URL
+const USER_API_URL = `${BACKEND_URL}/api/users/`;
+const INVESTMENT_API_URL = `${BACKEND_URL}/api/investments/`;
+const FINANCIALS_API_URL = `${BACKEND_URL}/api/financials/`;
+const CRYPTO_API_URL = `${BACKEND_URL}/api/crypto/`;
+const NEWS_API_URL = `${BACKEND_URL}/api/news/`;
+const AI_API_URL = `${BACKEND_URL}/api/ai/`;
+// --- EDITS END HERE ---
 
 const authConfig = (token) => ({
   headers: { Authorization: `Bearer ${token}` }
