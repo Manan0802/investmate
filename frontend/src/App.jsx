@@ -9,6 +9,7 @@ import InvestmentsPage from './pages/InvestmentsPage.jsx';
 import AnalysisPage from './pages/AnalysisPage.jsx';
 import MarketPage from './pages/MarketPage.jsx';
 import UserProfile from './pages/UserProfile.jsx';
+import { Analytics } from '@vercel/analytics/react';
 
 /**
  * The main App component serves as the root of the application.
@@ -50,7 +51,10 @@ function App() {
             element={<ProtectedRoute><UserProfile /></ProtectedRoute>}
           />
         </Routes>
+        
       </main>
+      <Analytics />
+      
     </div>
   );
 }
